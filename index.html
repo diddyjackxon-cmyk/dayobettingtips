@@ -3,48 +3,65 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DayoBettingTips - Neon Predictions & Betting Tips</title>
+  <title>DayoBettingTips - Facebook Style</title>
   <style>
-    /* Mtindo wa Neon Mzima wa Tovuti */
+    /* Mtindo wa Facebook Mzima wa Tovuti */
     body {
-      background-color: #0b0f19;
-      color: #e2e8f0;
-      font-family: 'Courier New', Courier, monospace;
+      background-color: #f0f2f5;
+      color: #050505;
+      font-family: Helvetica, Arial, sans-serif;
       margin: 0;
-      padding: 10px;
+      padding: 0;
     }
     
-    /* Neon Header */
-    .neon-header {
-      text-align: center;
-      padding: 20px;
-      border-bottom: 2px solid #00ffcc;
-      box-shadow: 0 0 15px rgba(0, 255, 204, 0.4);
-      margin-bottom: 20px;
+    /* Facebook Header */
+    .fb-header {
+      background-color: #1877f2;
+      color: white;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-weight: bold;
+      font-size: 1.3rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
-    .neon-header h1 {
-      color: #00ffcc;
-      font-size: 1.8rem;
-      text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
-      margin: 0;
+    .fb-logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .fb-logo-icon {
+      background-color: white;
+      color: #1877f2;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 1.4rem;
     }
 
-    /* Orodha ya Ligi Kubwa (Zinazobofyeka) */
+    /* Orodha ya Ligi (Zinazotoa mtumiaji na kumpeleka ukurasa mwingine wa mechi) */
     .leagues-container {
       max-width: 600px;
       margin: 15px auto;
-      background: #111827;
-      border: 2px solid #00ffcc;
+      background: #ffffff;
       padding: 15px;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(0, 255, 204, 0.3);
+      border-radius: 8px;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+      border: 1px solid #ced0d4;
     }
     .leagues-title {
-      color: #00ffcc;
-      font-size: 1rem;
+      color: #4b4f56;
+      font-size: 0.95rem;
       font-weight: bold;
       margin-bottom: 10px;
-      text-shadow: 0 0 5px rgba(0, 255, 204, 0.5);
     }
     .leagues-grid {
       display: flex;
@@ -52,234 +69,320 @@
       gap: 8px;
     }
     .league-badge {
-      background-color: #1f2937;
-      color: #38bdf8;
-      padding: 6px 12px;
+      background-color: #e4e6eb;
+      color: #050505;
+      padding: 8px 14px;
       border-radius: 20px;
       font-size: 0.85rem;
       font-weight: bold;
-      border: 1px solid #3b82f6;
       text-decoration: none;
-      box-shadow: 0 0 5px rgba(59, 130, 246, 0.4);
-      transition: all 0.3s ease;
+      transition: background 0.2s;
     }
     .league-badge:hover {
-      background-color: #3b82f6;
-      color: white;
+      background-color: #d8dadf;
     }
 
-    /* Neon Post/Table Container */
-    .neon-container {
+    /* Facebook Post Container (Kwa ajili ya Mechi) */
+    .fb-post-container {
       max-width: 600px;
-      margin: 20px auto;
-      background: #111827;
-      border: 2px solid #3b82f6;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
-      padding: 15px;
+      margin: 15px auto;
+      background: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+      border: 1px solid #ced0d4;
+      overflow: hidden;
     }
-
-    .neon-title {
-      color: #38bdf8;
-      font-size: 1.1rem;
+    .fb-post-header {
+      display: flex;
+      align-items: center;
+      padding: 12px 15px 8px 15px;
+    }
+    .fb-profile-pic {
+      width: 40px;
+      height: 40px;
+      background-color: #1877f2;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       font-weight: bold;
-      margin-bottom: 12px;
-      text-shadow: 0 0 8px rgba(56, 189, 248, 0.6);
-      border-left: 4px solid #38bdf8;
-      padding-left: 8px;
+      margin-right: 10px;
+    }
+    .fb-post-meta {
+      display: flex;
+      flex-direction: column;
+    }
+    .fb-page-name {
+      font-weight: bold;
+      color: #050505;
+      font-size: 0.95rem;
+    }
+    .fb-post-time {
+      font-size: 0.75rem;
+      color: #65676b;
+    }
+    .fb-post-content {
+      padding: 0 15px 10px 15px;
+      font-size: 0.9rem;
+      color: #050505;
     }
 
-    /* Neon Table */
-    .neon-table {
+    /* Meza ya Facebook Tips */
+    .fb-tips-table {
       width: 100%;
       border-collapse: collapse;
       font-size: 0.85rem;
+      margin-top: 8px;
     }
-    .neon-table th {
-      background-color: #1f2937;
-      color: #00ffcc;
+    .fb-tips-table th {
+      background-color: #f0f2f5;
+      color: #4b4f56;
       padding: 8px;
-      border-bottom: 2px solid #3b82f6;
+      border-bottom: 1px solid #ccd0d5;
       text-align: left;
-      text-shadow: 0 0 5px rgba(0, 255, 204, 0.5);
     }
-    .neon-table td {
+    .fb-tips-table td {
       padding: 8px;
-      border-bottom: 1px solid #374151;
-      color: #f3f4f6;
+      border-bottom: 1px solid #e4e6eb;
+      color: #1c1e21;
     }
-    .neon-table tr:hover {
-      background-color: #1f2937;
-    }
-
-    /* Neon Button (WhatsApp) */
-    .neon-btn {
-      display: block;
-      text-align: center;
-      background-color: transparent;
-      color: #00ffcc;
-      border: 2px solid #00ffcc;
-      padding: 10px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      margin-top: 15px;
-      box-shadow: 0 0 10px rgba(0, 255, 204, 0.3);
-      text-shadow: 0 0 5px #00ffcc;
-      transition: all 0.3s ease;
-    }
-    .neon-btn:hover {
-      background-color: #00ffcc;
-      color: #0b0f19;
-      box-shadow: 0 0 20px #00ffcc;
-    }
-    .neon-footer {
+    .fb-post-footer {
+      padding: 10px 15px;
+      background-color: #f0f2f5;
       display: flex;
       justify-content: space-between;
-      margin-top: 12px;
+      align-items: center;
       font-weight: bold;
-      color: #f43f5e;
-      text-shadow: 0 0 8px rgba(244, 63, 94, 0.5);
+      font-size: 0.9rem;
+    }
+    
+    /* Vifungo na Viungo */
+    .fb-btn {
+      background-color: #25d366;
+      color: white;
+      padding: 8px 14px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 0.85rem;
+    }
+    .fb-btn:hover {
+      background-color: #20ba5a;
+    }
+
+    /* Sehemu ya Ujumbe / Maoni */
+    .fb-message-box {
+      max-width: 600px;
+      margin: 20px auto;
+      background: #ffffff;
+      padding: 15px;
+      border-radius: 8px;
+      border: 1px solid #ced0d4;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    }
+    .fb-input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccd0d5;
+      border-radius: 6px;
+      box-sizing: border-box;
+      background-color: #f0f2f5;
+      font-family: inherit;
+    }
+    .fb-submit-btn {
+      background-color: #1877f2;
+      color: white;
+      border: none;
+      padding: 10px;
+      width: 100%;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .fb-submit-btn:hover {
+      background-color: #166fe5;
     }
   </style>
 </head>
 <body>
 
-  <!-- NEON HEADER -->
-  <div class="neon-header">
-    <h1>DAYO BETTING TIPS</h1>
-    <p style="color: #94a3b8; font-size: 0.85rem; margin-top: 5px;">⚡ Ultimate Neon Predictions & Analysis ⚡</p>
+  <!-- FACEBOOK HEADER -->
+  <div class="fb-header">
+    <div class="fb-logo">
+      <div class="fb-logo-icon">f</div>
+      DayoBettingTips
+    </div>
+    <div style="font-size: 0.85rem; font-weight: normal;">Feed</div>
   </div>
 
-  <!-- ORODHA YA LIGI KUBWA (ZINAZOBOFYEKA) -->
+  <!-- ORODHA YA LIGI (Ukigusa inakupeleka moja kwa moja kwenye mechi za ligi hiyo) -->
   <div class="leagues-container">
-    <div class="leagues-title">⚽ Chagua Ligi Unayotaka</div>
+    <div class="leagues-title">📌 Chagua Ligi kuona mechi zake:</div>
     <div class="leagues-grid">
-      <a href="#premier-league" class="league-badge">🏴󠁧󠁢󠁥󠁮󠁧󠁿 Premier League</a>
-      <a href="#la-liga" class="league-badge">🇪🇸 La Liga</a>
-      <a href="#serie-a" class="league-badge">🇮🇹 Serie A</a>
-      <a href="#bundesliga" class="league-badge">🇩🇪 Bundesliga</a>
-      <a href="#ligue-1" class="league-badge">🇫🇷 Ligue 1</a>
-      <a href="#ucl" class="league-badge">🇪🇺 UEFA Champions League</a>
+      <a href="#premier-league-match" class="league-badge">🏴󠁧󠁢󠁥󠁮󠁧󠁿 Premier League</a>
+      <a href="#la-liga-match" class="league-badge">🇪🇸 La Liga</a>
+      <a href="#serie-a-match" class="league-badge">🇮🇹 Serie A</a>
+      <a href="#bundesliga-match" class="league-badge">🇩🇪 Bundesliga</a>
     </div>
   </div>
 
-  <!-- MEZA YA TAREHE 07.09.2026 (PREMIER LEAGUE) -->
-  <div class="neon-container" id="premier-league">
-    <div class="neon-title">🔥 Free Betting Tips – 07.09.2026</div>
-    <table class="neon-table">
-      <thead>
-        <tr>
-          <th>Time</th>
-          <th>Country</th>
-          <th>Teams</th>
-          <th>Tip</th>
-          <th>Odds</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>17:00</td>
-          <td>🇮🇹 Italy</td>
-          <td>Cagliari - Lecce</td>
-          <td><b>over 1.5</b></td>
-          <td>1.28</td>
-        </tr>
-        <tr>
-          <td>17:00</td>
-          <td>🇱🇻 Latvia</td>
-          <td>Riga FC - BFC Daugavpils</td>
-          <td><b>1</b></td>
-          <td>1.29</td>
-        </tr>
-        <tr>
-          <td>19:30</td>
-          <td>🇵🇱 Poland</td>
-          <td>Pogon Szczecin - Wisla Plock</td>
-          <td><b>1</b></td>
-          <td>1.94</td>
-        </tr>
-      </tbody>
-    </table>
-    <div class="neon-footer">
-      <span>Final Odds: 16.27</span>
-      <span>Status: Active</span>
+  <!-- POST YA 1: PREMIER LEAGUE MECHI -->
+  <div class="fb-post-container" id="premier-league-match">
+    <div class="fb-post-header">
+      <div class="fb-profile-pic">DB</div>
+      <div class="fb-post-meta">
+        <span class="fb-page-name">DayoBettingTips Official</span>
+        <span class="fb-post-time">September 7, 2026 · 🌍 Public</span>
+      </div>
     </div>
-    <a href="https://whatsapp.com/channel/0029VbCvItkCHDysaMTU0Q1u" target="_blank" class="neon-btn">
-      💬 Follow the DayoBettingTips channel on WhatsApp
-    </a>
-  </div>
-
-  <!-- MEZA YA TAREHE 06.09.2026 (LA LIGA) -->
-  <div class="neon-container" id="la-liga">
-    <div class="neon-title">🔥 Free Betting Tips – 06.09.2026</div>
-    <table class="neon-table">
-      <thead>
-        <tr>
-          <th>Time</th>
-          <th>Country</th>
-          <th>Teams</th>
-          <th>Tip</th>
-          <th>Odds</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>15:00</td>
-          <td>🇫🇷 France</td>
-          <td>Troyes - Strasbourg</td>
-          <td><b>Under 3.5</b></td>
-          <td>1.25</td>
-        </tr>
-        <tr>
-          <td>16:15</td>
-          <td>🇪🇸 Spain</td>
-          <td>Valencia - Barcelona</td>
-          <td><b>2</b></td>
-          <td>1.28</td>
-        </tr>
-      </tbody>
-    </table>
-    <div class="neon-footer">
-      <span>Final Odds: 12.62</span>
-      <span>Status: Finished</span>
+    <div class="fb-post-content">
+      ⚽ <b>Premier League & Special Tips – 07.09.2026</b><br>
+      Chagua mechi hapa chini zilizochambuliwa kwa umakini mkubwa leo:
+      
+      <table class="fb-tips-table">
+        <thead>
+          <tr>
+            <th>Time</th>
+            <th>Country</th>
+            <th>Teams</th>
+            <th>Tip</th>
+            <th>Odds</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>17:00</td>
+            <td>🇮🇹 Italy</td>
+            <td>Cagliari - Lecce</td>
+            <td><b>over 1.5</b></td>
+            <td>1.28</td>
+          </tr>
+          <tr>
+            <td>17:00</td>
+            <td>🇱🇻 Latvia</td>
+            <td>Riga FC - BFC Daugavpils</td>
+            <td><b>1</b></td>
+            <td>1.29</td>
+          </tr>
+          <tr>
+            <td>19:30</td>
+            <td>🇵🇱 Poland</td>
+            <td>Pogon Szczecin - Wisla Plock</td>
+            <td><b>1</b></td>
+            <td>1.94</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="fb-post-footer">
+      <span style="color: #1877f2;">Final Odds: 16.27</span>
+      <a href="https://whatsapp.com/channel/0029VbCvItkCHDysaMTU0Q1u" target="_blank" class="fb-btn">Join WhatsApp</a>
     </div>
   </div>
 
-  <!-- MEZA YA TAREHE 05.09.2026 (SERIE A) -->
-  <div class="neon-container" id="serie-a">
-    <div class="neon-title">🔥 Free Betting Tips – 05.09.2026</div>
-    <table class="neon-table">
-      <thead>
-        <tr>
-          <th>Time</th>
-          <th>Country</th>
-          <th>Teams</th>
-          <th>Tip</th>
-          <th>Odds</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>15:00</td>
-          <td>🇮🇹 Italy</td>
-          <td>Fiorentina - Torino</td>
-          <td><b>Under 3.5</b></td>
-          <td>1.30</td>
-        </tr>
-        <tr>
-          <td>15:30</td>
-          <td>🇩🇪 Germany</td>
-          <td>Werder Bremen - RB Leipzig</td>
-          <td><b>2</b></td>
-          <td>1.70</td>
-        </tr>
-      </tbody>
-    </table>
-    <div class="neon-footer">
-      <span>Final Odds: 15.40</span>
-      <span>Status: Finished</span>
+  <!-- POST YA 2: LA LIGA MECHI -->
+  <div class="fb-post-container" id="la-liga-match">
+    <div class="fb-post-header">
+      <div class="fb-profile-pic">DB</div>
+      <div class="fb-post-meta">
+        <span class="fb-page-name">DayoBettingTips Official</span>
+        <span class="fb-post-time">September 6, 2026 · 🌍 Public</span>
+      </div>
     </div>
+    <div class="fb-post-content">
+      🇪🇸 <b>La Liga Match Predictions</b><br>
+      Mechi za Hispania na Ufaransa zilizopita:
+      
+      <table class="fb-tips-table">
+        <thead>
+          <tr>
+            <th>Time</th>
+            <th>Country</th>
+            <th>Teams</th>
+            <th>Tip</th>
+            <th>Odds</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>15:00</td>
+            <td>🇫🇷 France</td>
+            <td>Troyes - Strasbourg</td>
+            <td><b>Under 3.5</b></td>
+            <td>1.25</td>
+          </tr>
+          <tr>
+            <td>16:15</td>
+            <td>🇪🇸 Spain</td>
+            <td>Valencia - Barcelona</td>
+            <td><b>2</b></td>
+            <td>1.28</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="fb-post-footer">
+      <span style="color: #1877f2;">Final Odds: 12.62</span>
+      <span style="color: #65676b; font-size: 0.8rem;">Finished</span>
+    </div>
+  </div>
+
+  <!-- POST YA 3: SERIE A MECHI -->
+  <div class="fb-post-container" id="serie-a-match">
+    <div class="fb-post-header">
+      <div class="fb-profile-pic">DB</div>
+      <div class="fb-post-meta">
+        <span class="fb-page-name">DayoBettingTips Official</span>
+        <span class="fb-post-time">September 5, 2026 · 🌍 Public</span>
+      </div>
+    </div>
+    <div class="fb-post-content">
+      🇮🇹 <b>Serie A & Bundesliga Tips</b><br>
+      Uchambuzi wa ligi ya Italia na Ujerumani:
+      
+      <table class="fb-tips-table">
+        <thead>
+          <tr>
+            <th>Time</th>
+            <th>Country</th>
+            <th>Teams</th>
+            <th>Tip</th>
+            <th>Odds</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>15:00</td>
+            <td>🇮🇹 Italy</td>
+            <td>Fiorentina - Torino</td>
+            <td><b>Under 3.5</b></td>
+            <td>1.30</td>
+          </tr>
+          <tr>
+            <td>15:30</td>
+            <td>🇩🇪 Germany</td>
+            <td>Werder Bremen - RB Leipzig</td>
+            <td><b>2</b></td>
+            <td>1.70</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="fb-post-footer">
+      <span style="color: #1877f2;">Final Odds: 15.40</span>
+      <span style="color: #65676b; font-size: 0.8rem;">Finished</span>
+    </div>
+  </div>
+
+  <!-- SEHEMU YA MAONI / UJUMBE -->
+  <div class="fb-message-box">
+    <div style="font-weight: bold; margin-bottom: 10px; color: #4b4f56;">💬 Acha Ujumbe au Maoni Yako</div>
+    <form>
+      <input type="text" placeholder="Jina lako..." class="fb-input" required>
+      <textarea rows="3" placeholder="Andika ujumbe wako hapa..." class="fb-input" required></textarea>
+      <button type="submit" class="fb-submit-btn">Chapisha Ujumbe</button>
+    </form>
   </div>
 
 </body>
