@@ -173,15 +173,48 @@
 </head>
 <body>
 
-    <header>
-        <div class="logo-container">
-            <img src="1000041504.png" alt="DayoBettingTips Logo">
-        </div>
-        <h1>DayoBettingTips</h1>
-        <p>Utabiri Sahihi wa Mechi Kila Siku</p>
-    </header>
+    <!-- BANNER SLIDESHOW YA DAYOBETTINGTIPS -->
+<div class="slideshow-container">
+  <!-- Picha ya Kwanza -->
+  <img class="mySlides fade" src="1000041504.png" alt="DayoBettingTips Banner 1">
 
-    <div class="container">
+  <!-- Picha ya Pili (Hakikisha umeweka jina la picha ya pili uliyonayo GitHub) -->
+  <img class="mySlides fade" src="banner2.jpg" alt="DayoBettingTips Banner 2">
+
+  <!-- Picha ya Tatu (Hakikisha umeweka jina la picha ya tatu uliyonayo GitHub) -->
+  <img class="mySlides fade" src="banner3.jpg" alt="DayoBettingTips Banner 3">
+</div>
+<br>
+
+<div class="dot-container">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+</div>
+
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 3000); 
+}
+</script>
+
+    
         
         <!-- FREE TIPS SECTION -->
         <div class="section-title">🔥 Free Betting Tips</div>
