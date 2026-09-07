@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DayoBettingTips - Facebook Style</title>
+  <title>DayoBettingTips - Professional Betting & VIP Platform</title>
   <style>
-    /* Mtindo wa Facebook Mzima wa Tovuti */
     body {
       background-color: #f0f2f5;
       color: #050505;
@@ -47,7 +46,7 @@
       font-size: 1.4rem;
     }
 
-    /* Orodha ya Ligi (Zinazotoa mtumiaji na kumpeleka ukurasa mwingine wa mechi) */
+    /* Orodha ya Menyu na Ligi Zinazobofyeka */
     .leagues-container {
       max-width: 600px;
       margin: 15px auto;
@@ -81,8 +80,12 @@
     .league-badge:hover {
       background-color: #d8dadf;
     }
+    .vip-badge {
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      color: white !important;
+    }
 
-    /* Facebook Post Container (Kwa ajili ya Mechi) */
+    /* Post Containers */
     .fb-post-container {
       max-width: 600px;
       margin: 15px auto;
@@ -92,6 +95,10 @@
       border: 1px solid #ced0d4;
       overflow: hidden;
     }
+    .vip-post-container {
+      border: 2px solid #f59e0b;
+    }
+
     .fb-post-header {
       display: flex;
       align-items: center;
@@ -108,6 +115,9 @@
       justify-content: center;
       font-weight: bold;
       margin-right: 10px;
+    }
+    .vip-profile-pic {
+      background: linear-gradient(135deg, #f59e0b, #d97706);
     }
     .fb-post-meta {
       display: flex;
@@ -128,7 +138,31 @@
       color: #050505;
     }
 
-    /* Meza ya Facebook Tips */
+    /* Scoreboard maalum */
+    .scoreboard-box {
+      background: #111827;
+      color: white;
+      padding: 10px;
+      border-radius: 6px;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    .score-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 6px 0;
+      border-bottom: 1px solid #374151;
+      font-size: 0.85rem;
+    }
+    .score-num {
+      background: #2563eb;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+
+    /* Meza za Tips */
     .fb-tips-table {
       width: 100%;
       border-collapse: collapse;
@@ -157,7 +191,7 @@
       font-size: 0.9rem;
     }
     
-    /* Vifungo na Viungo */
+    /* Vifungo */
     .fb-btn {
       background-color: #25d366;
       color: white;
@@ -166,8 +200,8 @@
       text-decoration: none;
       font-size: 0.85rem;
     }
-    .fb-btn:hover {
-      background-color: #20ba5a;
+    .vip-btn {
+      background: linear-gradient(135deg, #f59e0b, #d97706);
     }
 
     /* Sehemu ya Ujumbe / Maoni */
@@ -195,13 +229,11 @@
       color: white;
       border: none;
       padding: 10px;
+      width: 10px; /* will fix below */
       width: 100%;
       border-radius: 6px;
       font-weight: bold;
       cursor: pointer;
-    }
-    .fb-submit-btn:hover {
-      background-color: #166fe5;
     }
   </style>
 </head>
@@ -213,171 +245,161 @@
       <div class="fb-logo-icon">f</div>
       DayoBettingTips
     </div>
-    <div style="font-size: 0.85rem; font-weight: normal;">Feed</div>
+    <div style="font-size: 0.85rem; font-weight: normal;">Live Update</div>
   </div>
 
-  <!-- ORODHA YA LIGI (Ukigusa inakupeleka moja kwa moja kwenye mechi za ligi hiyo) -->
+  <!-- ORODHA YA MENYU NA LIGI ZINAZOBOFYEKA -->
   <div class="leagues-container">
-    <div class="leagues-title">📌 Chagua Ligi kuona mechi zake:</div>
+    <div class="leagues-title">📌 Menyu Kuu na Uchaguzi wa Ligi:</div>
     <div class="leagues-grid">
-      <a href="#premier-league-match" class="league-badge">🏴󠁧󠁢󠁥󠁮󠁧󠁿 Premier League</a>
-      <a href="#la-liga-match" class="league-badge">🇪🇸 La Liga</a>
-      <a href="#serie-a-match" class="league-badge">🇮🇹 Serie A</a>
-      <a href="#bundesliga-match" class="league-badge">🇩🇪 Bundesliga</a>
+      <a href="#vip-section" class="league-badge vip-badge">⭐ VIP TIPS</a>
+      <a href="#scoreboard-section" class="league-badge">📊 Live Scoreboard</a>
+      <a href="#hf-section" class="league-badge">⚽ Half Time / Full Time</a>
+      <a href="#gg-section" class="league-badge">🔥 GG / BTTS</a>
+      <a href="#player-section" class="league-badge">🎯 Player Predictions</a>
     </div>
   </div>
 
-  <!-- POST YA 1: PREMIER LEAGUE MECHI -->
-  <div class="fb-post-container" id="premier-league-match">
+  <!-- 1. VIP SECTION -->
+  <div class="fb-post-container vip-post-container" id="vip-section">
     <div class="fb-post-header">
-      <div class="fb-profile-pic">DB</div>
+      <div class="fb-profile-pic vip-profile-pic">VIP</div>
       <div class="fb-post-meta">
-        <span class="fb-page-name">DayoBettingTips Official</span>
-        <span class="fb-post-time">September 7, 2026 · 🌍 Public</span>
+        <span class="fb-page-name" style="color: #d97706;">DayoBettingTips VIP 🌟</span>
+        <span class="fb-post-time">September 7, 2026 · 🔒 Exclusive</span>
       </div>
     </div>
     <div class="fb-post-content">
-      ⚽ <b>Premier League & Special Tips – 07.09.2026</b><br>
-      Chagua mechi hapa chini zilizochambuliwa kwa umakini mkubwa leo:
-      
+      💎 <b>VIP SURE 5+ ODDS</b><br>
+      Mechi za kiwango cha juu zilizochambuliwa kwa umakini mkubwa.
       <table class="fb-tips-table">
         <thead>
-          <tr>
-            <th>Time</th>
-            <th>Country</th>
-            <th>Teams</th>
-            <th>Tip</th>
-            <th>Odds</th>
-          </tr>
+          <tr><th>Time</th><th>Teams</th><th>Tip</th><th>Odds</th></tr>
         </thead>
         <tbody>
-          <tr>
-            <td>17:00</td>
-            <td>🇮🇹 Italy</td>
-            <td>Cagliari - Lecce</td>
-            <td><b>over 1.5</b></td>
-            <td>1.28</td>
-          </tr>
-          <tr>
-            <td>17:00</td>
-            <td>🇱🇻 Latvia</td>
-            <td>Riga FC - BFC Daugavpils</td>
-            <td><b>1</b></td>
-            <td>1.29</td>
-          </tr>
-          <tr>
-            <td>19:30</td>
-            <td>🇵🇱 Poland</td>
-            <td>Pogon Szczecin - Wisla Plock</td>
-            <td><b>1</b></td>
-            <td>1.94</td>
-          </tr>
+          <tr><td>19:00</td><td>VIP Match A [Imefichwa]</td><td><b>1 & Over 1.5</b></td><td>2.10</td></tr>
+          <tr><td>21:45</td><td>VIP Match B [Imefichwa]</td><td><b>GG</b></td><td>1.85</td></tr>
         </tbody>
       </table>
     </div>
     <div class="fb-post-footer">
-      <span style="color: #1877f2;">Final Odds: 16.27</span>
-      <a href="https://whatsapp.com/channel/0029VbCvItkCHDysaMTU0Q1u" target="_blank" class="fb-btn">Join WhatsApp</a>
+      <span style="color: #d97706;">Total Odds: 3.88</span>
+      <a href="https://whatsapp.com/channel/0029VbCvItkCHDysaMTU0Q1u" target="_blank" class="fb-btn vip-btn">Pata VIP WhatsApp</a>
     </div>
   </div>
 
-  <!-- POST YA 2: LA LIGA MECHI -->
-  <div class="fb-post-container" id="la-liga-match">
+  <!-- 2. SCOREBOARD SECTION -->
+  <div class="fb-post-container" id="scoreboard-section">
     <div class="fb-post-header">
-      <div class="fb-profile-pic">DB</div>
+      <div class="fb-profile-pic">📊</div>
       <div class="fb-post-meta">
-        <span class="fb-page-name">DayoBettingTips Official</span>
-        <span class="fb-post-time">September 6, 2026 · 🌍 Public</span>
+        <span class="fb-page-name">Live Scoreboard</span>
+        <span class="fb-post-time">September 7, 2026 · Matokeo ya Moja kwa Moja</span>
       </div>
     </div>
     <div class="fb-post-content">
-      🇪🇸 <b>La Liga Match Predictions</b><br>
-      Mechi za Hispania na Ufaransa zilizopita:
-      
+      <div class="scoreboard-box">
+        <div style="font-size: 0.8rem; color: #9ca3af; margin-bottom: 5px;">🔴 LIVE / FT RESULTS</div>
+        <div class="score-item">
+          <span>Cagliari - Lecce</span>
+          <span class="score-num">2 - 1</span>
+        </div>
+        <div class="score-item">
+          <span>Riga FC - BFC Daugavpils</span>
+          <span class="score-num">3 - 0</span>
+        </div>
+        <div class="score-item" style="border: none;">
+          <span>Pogon Szczecin - Wisla Plock</span>
+          <span class="score-num">1 - 1</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. HALF TIME / FULL TIME (H/F) SECTION -->
+  <div class="fb-post-container" id="hf-section">
+    <div class="fb-post-header">
+      <div class="fb-profile-pic">⚽</div>
+      <div class="fb-post-meta">
+        <span class="fb-page-name">Half Time / Full Time (H/F) Tips</span>
+        <span class="fb-post-time">September 7, 2026</span>
+      </div>
+    </div>
+    <div class="fb-post-content">
+      ⏱️ Utabiri wa matokeo ya mapumziko (HT) na mwisho wa mchezo (FT):
       <table class="fb-tips-table">
         <thead>
-          <tr>
-            <th>Time</th>
-            <th>Country</th>
-            <th>Teams</th>
-            <th>Tip</th>
-            <th>Odds</th>
-          </tr>
+          <tr><th>Time</th><th>Teams</th><th>H/F Tip</th><th>Odds</th></tr>
         </thead>
         <tbody>
-          <tr>
-            <td>15:00</td>
-            <td>🇫🇷 France</td>
-            <td>Troyes - Strasbourg</td>
-            <td><b>Under 3.5</b></td>
-            <td>1.25</td>
-          </tr>
-          <tr>
-            <td>16:15</td>
-            <td>🇪🇸 Spain</td>
-            <td>Valencia - Barcelona</td>
-            <td><b>2</b></td>
-            <td>1.28</td>
-          </tr>
+          <tr><td>18:00</td><td>Team X - Team Y</td><td><b>1/1</b> (HT/FT)</td><td>2.45</td></tr>
+          <tr><td>20:30</td><td>Team W - Team Z</td><td><b>X/2</b> (HT/FT)</td><td>4.50</td></tr>
         </tbody>
       </table>
     </div>
     <div class="fb-post-footer">
-      <span style="color: #1877f2;">Final Odds: 12.62</span>
-      <span style="color: #65676b; font-size: 0.8rem;">Finished</span>
+      <span style="color: #1877f2;">H/F Expert Market</span>
+      <a href="https://whatsapp.com/channel/0029VbCvItkCHDysaMTU0Q1u" target="_blank" class="fb-btn">WhatsApp</a>
     </div>
   </div>
 
-  <!-- POST YA 3: SERIE A MECHI -->
-  <div class="fb-post-container" id="serie-a-match">
+  <!-- 4. GOAL / GOAL (GG) SECTION -->
+  <div class="fb-post-container" id="gg-section">
     <div class="fb-post-header">
-      <div class="fb-profile-pic">DB</div>
+      <div class="fb-profile-pic" style="background-color: #10b981;">GG</div>
       <div class="fb-post-meta">
-        <span class="fb-page-name">DayoBettingTips Official</span>
-        <span class="fb-post-time">September 5, 2026 · 🌍 Public</span>
+        <span class="fb-page-name">Goal / Goal (Both Teams to Score)</span>
+        <span class="fb-post-time">September 7, 2026</span>
       </div>
     </div>
     <div class="fb-post-content">
-      🇮🇹 <b>Serie A & Bundesliga Tips</b><br>
-      Uchambuzi wa ligi ya Italia na Ujerumani:
-      
+      🔥 Mechi ambazo timu zote zinatarajiwa kufunga mabao leo:
       <table class="fb-tips-table">
         <thead>
-          <tr>
-            <th>Time</th>
-            <th>Country</th>
-            <th>Teams</th>
-            <th>Tip</th>
-            <th>Odds</th>
-          </tr>
+          <tr><th>Time</th><th>Teams</th><th>Tip</th><th>Odds</th></tr>
         </thead>
         <tbody>
-          <tr>
-            <td>15:00</td>
-            <td>🇮🇹 Italy</td>
-            <td>Fiorentina - Torino</td>
-            <td><b>Under 3.5</b></td>
-            <td>1.30</td>
-          </tr>
-          <tr>
-            <td>15:30</td>
-            <td>🇩🇪 Germany</td>
-            <td>Werder Bremen - RB Leipzig</td>
-            <td><b>2</b></td>
-            <td>1.70</td>
-          </tr>
+          <tr><td>17:00</td><td>Club A vs Club B</td><td><b>GG (Yes)</b></td><td>1.72</td></tr>
+          <tr><td>19:15</td><td>Club C vs Club D</td><td><b>GG & Over 2.5</b></td><td>2.30</td></tr>
         </tbody>
       </table>
     </div>
     <div class="fb-post-footer">
-      <span style="color: #1877f2;">Final Odds: 15.40</span>
-      <span style="color: #65676b; font-size: 0.8rem;">Finished</span>
+      <span style="color: #10b981;">High Success Rate</span>
+      <a href="https://whatsapp.com/channel/0029VbCvItkCHDysaMTU0Q1u" target="_blank" class="fb-btn" style="background-color: #10b981;">Join WhatsApp</a>
     </div>
   </div>
 
-  <!-- SEHEMU YA MAONI / UJUMBE -->
+  <!-- 5. PLAYER PREDICTIONS SECTION -->
+  <div class="fb-post-container" id="player-section">
+    <div class="fb-post-header">
+      <div class="fb-profile-pic" style="background-color: #8b5cf6;">🎯</div>
+      <div class="fb-post-meta">
+        <span class="fb-page-name">Player Predictions (Wachezaji)</span>
+        <span class="fb-post-time">September 7, 2026</span>
+      </div>
+    </div>
+    <div class="fb-post-content">
+      ⭐ Utabiri maalum wa wachezaji watakaofunga au kutoa assist leo:
+      <table class="fb-tips-table">
+        <thead>
+          <tr><th>Player</th><th>Team</th><th>Prediction</th><th>Odds</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Strikers A</td><td>Team A</td><td><b>To Score Anytime</b></td><td>1.95</td></tr>
+          <tr><td>Winger B</td><td>Team B</td><td><b>Assist or Goal</b></td><td>2.15</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="fb-post-footer">
+      <span style="color: #8b5cf6;">Player Market Special</span>
+      <a href="https://whatsapp.com/channel/0029VbCvItkCHDysaMTU0Q1u" target="_blank" class="fb-btn" style="background-color: #8b5cf6;">WhatsApp</a>
+    </div>
+  </div>
+
+  <!-- 6. SEHEMU YA UJUMBE / MAONI (MESSAGE BOX) -->
   <div class="fb-message-box">
-    <div style="font-weight: bold; margin-bottom: 10px; color: #4b4f56;">💬 Acha Ujumbe au Maoni Yako</div>
+    <div style="font-weight: bold; margin-bottom: 10px; color: #4b4f56;">💬 Tuma Ujumbe, Maoni au Ombi la VIP</div>
     <form>
       <input type="text" placeholder="Jina lako..." class="fb-input" required>
       <textarea rows="3" placeholder="Andika ujumbe wako hapa..." class="fb-input" required></textarea>
