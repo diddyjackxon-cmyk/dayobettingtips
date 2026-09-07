@@ -1,263 +1,121 @@
 <!DOCTYPE html>
 <html lang="sw">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DayoBettingTips - Accurate Predictions & Instant VIP Tips</title>
-    <style>
-        :root {
-            --primary-color: #0f172a;
-            --accent-color: #f59e0b;
-            --success-color: #10b981;
-            --bg-color: #f8fafc;
-            --text-color: #334155;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DayoBettingTips Slideshow</title>
+<style>
+  /* Mtindo wa nje wa boksi la picha */
+  .slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+    overflow: hidden; /* Kuficha picha zilizoko pembeni */
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    margin-top: 20px;
+  }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+  /* Mtindo wa picha zenyewe */
+  .mySlides {
+    display: none; /* Zisizoonekana zote kwa pamoja */
+    width: 100%;   /* Kujaza upana wote */
+    height: 300px;  /* Urefu maalum (unaweza kubadilisha) */
+    object-fit: cover; /* Kuhakikisha picha haipotezi umbo */
+  }
 
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-        }
+  /* Mtindo wa namba za chini (Dots) */
+  .dot-container {
+    text-align: center;
+    padding: 10px;
+    background: #f1f1f1;
+  }
+  .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+  .active, .dot:hover {
+    background-color: #717171;
+  }
 
-        header {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 1.5rem 1rem;
-            text-align: center;
-            border-bottom: 4px solid var(--accent-color);
-        }
+  /* Uhuishaji (Animation) wa picha kuingia */
+  .fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
 
-        .logo-container {
-            margin-bottom: 0.5rem;
-        }
+  @-webkit-keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
 
-        .logo-container img {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid var(--accent-color);
-        }
+  @keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+</style>
+</head>
+<body>
 
-        header h1 {
-            font-size: 1.5rem;
-            margin-bottom: 0.2rem;
-            color: #ffffff;
-        }
+<!-- Sehemu ya Picha -->
+<div class="slideshow-container">
 
-        header p {
-            font-size: 0.9rem;
-            color: #94a3b8;
-        }
+  <!-- Picha ya Kwanza -->
+  <!-- Badilisha '1000041504.png' na jina la picha yako ya kwanza -->
+  <img class="mySlides fade" src="1000041504.png" alt="DayoBettingTips Banner 1">
 
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 1rem;
-        }
+  <!-- Picha ya Pili -->
+  <!-- Badilisha 'banner2.jpg' na jina la picha yako ya pili -->
+  <img class="mySlides fade" src="banner2.jpg" alt="DayoBettingTips Banner 2">
 
-        .section-title {
-            font-size: 1.2rem;
-            margin: 1.5rem 0 0.8rem 0;
-            color: var(--primary-color);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            border-left: 4px solid var(--accent-color);
-            padding-left: 0.5rem;
-        }
+  <!-- Picha ya Tatu -->
+  <!-- Badilisha 'banner3.jpg' na jina la picha yako ya tatu -->
+  <img class="mySlides fade" src="banner3.jpg" alt="DayoBettingTips Banner 3">
 
-        .card {
-            background: white;
-            border-radius: 8px;
-            padding: 1rem;
-            margin-bottom: 0.8rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-left: 4px solid var(--success-color);
-        }
+</div>
+<br>
 
-        .card.vip {
-            border-left-color: var(--accent-color);
-            background: linear-gradient(to right, #fffbeb, #ffffff);
-        }
+<!-- Sehemu ya vidude vya kubadili picha chini (Dots) -->
+<div class="dot-container">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+</div>
 
-        .match-info h3 {
-            font-size: 1rem;
-            color: var(--primary-color);
-            margin-bottom: 0.2rem;
-        }
+<script>
+// JavaScript kwa ajili ya kubadilisha picha yenyewe
+var slideIndex = 0;
+showSlides();
 
-        .match-info p {
-            font-size: 0.85rem;
-            color: #64748b;
-        }
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 3000); // Picha inabadilika kila sekunde 3 (3000ms)
+}
 
-        .odds-badge {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 0.4rem 0.8rem;
-            border-radius: 6px;
-            font-weight: bold;
-            font-size: 0.9rem;
-            text-align: center;
-        }
+function currentSlide(n) {
+  showSlidesIndex(slideIndex = n);
+}
+</script>
 
-        .vip-box {
-            background: white;
-            border-radius: 10px;
-            padding: 1.5rem;
-            text-align: center;
-            margin-top: 2rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            border: 2px dashed var(--accent-color);
-        }
-
-        .vip-box h2 {
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
-            font-size: 1.3rem;
-        }
-
-        .vip-box p {
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-            color: #475569;
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: #25d366;
-            color: white;
-            padding: 0.7rem 1.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 0.95rem;
-            margin-top: 0.5rem;
-            box-shadow: 0 2px 5px rgba(37, 211, 102, 0.3);
-        }
-
-        .payment-info {
-            background: #f1f5f9;
-            padding: 0.8rem;
-            border-radius: 6px;
-            font-size: 0.85rem;
-            margin-bottom: 1rem;
-            color: #334155;
-        }
-
-        footer {
-            text-align: center;
-            padding: 2rem 1rem;
-            font-size: 0.8rem;
-            color: #64748b;
-        }
-
-        .loading {
-            text-align: center;
-            padding: 1rem;
-            color: #64748b;
-            font-size: 0.9rem;
-        }
-        <!-- Bango Kuu la DayoBettingTips (Header Banner) -->
-<header style="background-color: #0a192f; padding: 0; text-align: center; width: 100%; margin-bottom: 20px;">
-    <img src=file_000000006e1c821185342d41ca06b663.png" alt="DayoBettingTips Official Banner" style="max-width: 100%; height: auto; display: block; border-radius: 8px;">
-</header>
-
-
-    <div class="container">
-        
-        <!-- FREE TIPS SECTION -->
-        <div class="section-title">🔥 Free Betting Tips</div>
-        <div id="free-tips-container">
-            <div class="loading">Inapakia Mechi za Leo...</div>
-        </div>
-
-        <!-- VIP TIPS SECTION -->
-        <div class="section-title">💎 VIP Tips (Locked)</div>
-        <div id="vip-tips-container">
-            <div class="loading">Inapakia VIP Tips...</div>
-        </div>
-
-        <!-- PAYMENT & WHATSAPP BOX -->
-        <div class="vip-box">
-            <h2>Jiunge na VIP Leo Upate Mkwanja!</h2>
-            <p>Pata mechi za uhakika zenye odds kubwa za kufa mtu kila siku kwa malipo rahisi.</p>
-            <div class="payment-info">
-                <strong>Namba ya Malipo:</strong> 0798466230<br>
-                Tuma ujumbe kupitia WhatsApp baada ya kulipia ili kuunganishwa.
-            </div>
-            <a href="https://wa.me/255798466230?text=Habari%20Dayo,%20Nataka%20kujiunga%20na%20VIP%20Tips" class="btn" target="_blank">Lipia / Wasiliana na Admin WhatsApp</a>
-        </div>
-
-    </div>
-
-    <footer>
-        &copy; 2026 DayoBettingTips. Haki zote zimehifadhiwa.
-    </footer>
-
-    <script>
-        // Hapa ndipo codes zinapochota data moja kwa moja kutoka Google Sheets yako
-        const sheetID = "1XNPoxSUcjsewGuuf6mjW0Qgayw0oXmAInB0cjSGz3Dg";
-        const url = `https://docs.google.com/spreadsheets/d/${sheetID}/gviz/tq?tqx=out:json`;
-
-        fetch(url)
-            .then(res => res.text())
-            .then(data => {
-                // Kuchuja data za Google Sheets
-                const json = JSON.parse(data.substring(47, data.length - 2));
-                const rows = json.table.rows;
-
-                let freeHTML = "";
-                let vipHTML = "";
-
-                rows.forEach(row => {
-                    const type = row.c[0] ? row.c[0].v.trim() : "";
-                    const match = row.c[1] ? row.c[1].v : "";
-                    const prediction = row.c[2] ? row.c[2].v : "";
-                    const odds = row.c[3] ? row.c[3].v : "";
-
-                    if (type.toLowerCase() === "free") {
-                        freeHTML += `
-                            <div class="card">
-                                <div class="match-info">
-                                    <h3>${match}</h3>
-                                    <p>Utabiri: <strong>${prediction}</strong></p>
-                                </div>
-                                <div class="odds-badge">Odds: ${odds}</div>
-                            </div>
-                        `;
-                    } else if (type.toLowerCase() === "vip") {
-                        vipHTML += `
-                            <div class="card vip">
-                                <div class="match-info">
-                                    <h3>${match}</h3>
-                                    <p>Utabiri: <strong>${prediction}</strong></p>
-                                </div>
-                                <div class="odds-badge">Odds: ${odds}</div>
-                            </div>
-                        `;
-                    }
-                });
-
-                document.getElementById("free-tips-container").innerHTML = freeHTML || "<p>Hakuna Free Tips kwa sasa.</p>";
-                document.getElementById("vip-tips-container").innerHTML = vipHTML || "<p>Hakuna VIP Tips kwa sasa.</p>";
-            })
-            .catch(err => {
-                console.error("Hitilafu imetokea:", err);
-                document.getElementById("free-tips-container").innerHTML = "<p>Imeshindikana kupakia mechi kwa sasa.</p>";
-                document.getElementById("vip-tips-container").innerHTML = "<p>Imeshindikana kupakia mechi kwa sasa.</p>";
-            });
-    </script>
 </body>
 </html>
