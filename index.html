@@ -170,7 +170,92 @@
             font-size: 0.9rem;
         }
     </style>
-</head> <!-- ORODHA YA LIGI KUBWA -->
+</head> <style>
+  /* Mtindo wa YouTube Header */
+  .yt-header {
+    background-color: #0f0f0f;
+    color: #ffffff;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: Roboto, Arial, sans-serif;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  }
+  .yt-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+  .yt-logo span {
+    background-color: #ff0000;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+  }
+
+  /* Mtindo wa Video Card ya YouTube */
+  .yt-video-container {
+    max-width: 800px;
+    margin: 20px auto;
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    font-family: Roboto, Arial, sans-serif;
+  }
+  .yt-video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* Uwiano wa video 16:9 */
+    height: 0;
+  }
+  .yt-video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+  .yt-video-info {
+    padding: 15px;
+  }
+  .yt-video-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #0f0f0f;
+    margin-bottom: 8px;
+  }
+  .yt-channel-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+    border-top: 1px solid #e5e5e5;
+    padding-top: 10px;
+  }
+  .yt-channel-name {
+    font-size: 0.95rem;
+    color: #606060;
+    font-weight: 500;
+  }
+  .yt-subscribe-btn {
+    background-color: #cc0000;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 18px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.85rem;
+  }
+  .yt-subscribe-btn:hover {
+    background-color: #990000;
+  }
+</style>
+!-- ORODHA YA LIGI KUBWA -->
 <div class="leagues-container">
   <div class="leagues-title">⚽ Chagua Ligi Unayotaka</div>
   <div class="leagues-grid">
